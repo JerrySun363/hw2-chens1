@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.AnnotationBase_Type;
 
 /** Used for storing tokens from a single question. When using tokens overlap method, there is no need to analyze the question again to identify the tokens.
- * Updated by JCasGen Sat Sep 21 00:54:20 EDT 2013
+ * Updated by JCasGen Sat Sep 21 01:10:13 EDT 2013
  * @generated */
 public class QuestionTokens_Type extends Annotation_Type {
   /** @generated */
@@ -60,7 +60,26 @@ public class QuestionTokens_Type extends Annotation_Type {
       jcas.throwFeatMissing("tokens", "edu.cmu.deiis.types.QuestionTokens");
     ll_cas.ll_setRefValue(addr, casFeatCode_tokens, v);}
     
-  
+   /** @generated */
+  public int getTokens(int addr, int i) {
+        if (featOkTst && casFeat_tokens == null)
+      jcas.throwFeatMissing("tokens", "edu.cmu.deiis.types.QuestionTokens");
+    if (lowLevelTypeChecks)
+      return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i);
+  return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i);
+  }
+   
+  /** @generated */ 
+  public void setTokens(int addr, int i, int v) {
+        if (featOkTst && casFeat_tokens == null)
+      jcas.throwFeatMissing("tokens", "edu.cmu.deiis.types.QuestionTokens");
+    if (lowLevelTypeChecks)
+      ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i, v, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i);
+    ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_tokens), i, v);
+  }
+ 
 
 
 
@@ -71,7 +90,7 @@ public class QuestionTokens_Type extends Annotation_Type {
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
  
-    casFeat_tokens = jcas.getRequiredFeatureDE(casType, "tokens", "uima.cas.FSList", featOkTst);
+    casFeat_tokens = jcas.getRequiredFeatureDE(casType, "tokens", "uima.cas.FSArray", featOkTst);
     casFeatCode_tokens  = (null == casFeat_tokens) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_tokens).getCode();
 
   }
