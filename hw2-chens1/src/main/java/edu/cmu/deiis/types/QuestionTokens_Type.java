@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.cas.AnnotationBase_Type;
 
 /** Used for storing tokens from a single question. When using tokens overlap method, there is no need to analyze the question again to identify the tokens.
- * Updated by JCasGen Sat Sep 21 01:10:13 EDT 2013
+ * Updated by JCasGen Sat Sep 21 13:26:51 EDT 2013
  * @generated */
 public class QuestionTokens_Type extends Annotation_Type {
   /** @generated */

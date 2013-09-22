@@ -88,7 +88,7 @@
         <featureDescription>
           <name>tokens</name>
           <description>The tokens in a specific question. Since usually one JCas usually holds one question, there is no need to hold an Question in it.</description>
-          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
           <elementType>edu.cmu.deiis.types.Token</elementType>
         </featureDescription>
       </features>
@@ -101,7 +101,7 @@
         <featureDescription>
           <name>tokens</name>
           <description>The list of tokens of each Answer. Convienient for Token Overlap method.</description>
-          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
           <elementType>edu.cmu.deiis.types.Token</elementType>
         </featureDescription>
         <featureDescription>

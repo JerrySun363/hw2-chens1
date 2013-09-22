@@ -77,9 +77,10 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
         qs.setTokens(i, token);
       else
         as.setTokens(i, token);
-
-      offset += 1;
+      
       i++;
+      offset += 1;
+      
     }
   }
 

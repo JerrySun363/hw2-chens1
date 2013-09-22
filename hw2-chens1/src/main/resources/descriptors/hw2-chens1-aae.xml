@@ -10,6 +10,9 @@
     <delegateAnalysisEngine key="hw2-chens1-token">
       <import name="descriptors.hw2-chens1-token"/>
     </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="hw2-chens1-goldPipeine">
+      <import name="descriptors.hw2-chens1-goldPipeine"/>
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>hw2-chens1-aae</name>
@@ -22,6 +25,7 @@
       <fixedFlow>
         <node>hw2-chens1-text</node>
         <node>hw2-chens1-token</node>
+      <node>hw2-chens1-goldPipeine</node>
       </fixedFlow>
     </flowConstraints>
     <fsIndexCollection/>
