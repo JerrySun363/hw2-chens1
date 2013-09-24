@@ -18,9 +18,13 @@ public class TokenOverlapAnnotator  extends JCasAnnotator_ImplBase{
    FSArray answerTokens=null;
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
+    @SuppressWarnings("rawtypes")
     FSIndex questionTokensIndex = aJCas.getAnnotationIndex(QuestionTokens.type);
+    @SuppressWarnings("rawtypes")
     FSIndex answerTokensIndex = aJCas.getAnnotationIndex(AnswerTokens.type);
+    @SuppressWarnings("rawtypes")
     Iterator questionTokensIterator = questionTokensIndex.iterator();
+    @SuppressWarnings("rawtypes")
     Iterator answerTokensIterator = answerTokensIndex.iterator();
     
     while(questionTokensIterator.hasNext()){
@@ -36,7 +40,7 @@ public class TokenOverlapAnnotator  extends JCasAnnotator_ImplBase{
         Token qs = (Token)this.questionTokens.get(i);
         for(int j=0;j<this.answerTokens.size();j++){
           Token as = (Token)this.answerTokens.get(j);
-          if(qs.getCoveredText().equals(as.getCoveredText())){
+          if(qs!=null&&as!=null&&qs.getCoveredText().equals(as.getCoveredText())){
             count ++;
           }
         }
@@ -47,12 +51,12 @@ public class TokenOverlapAnnotator  extends JCasAnnotator_ImplBase{
       answerS.setAnswer(ats.getAnswer());
       answerS.setScore((count*1.0)/this.answerTokens.size());
       answerS.setConfidence(0.8);
+      answerS.setCasProcessorId(this.getClass().getName());
       answerS.addToIndexes(aJCas);
+      
       }
       
     }
-    
-    // TODO Auto-generated method stub
     
   }
 

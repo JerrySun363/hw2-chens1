@@ -1,12 +1,15 @@
 package edu.cmu.hw2.annotators;
 
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIndex;
 import org.apache.uima.internal.util.TextTokenizer;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.cas.FSArray;
 
 import edu.cmu.deiis.types.Answer;
 import edu.cmu.deiis.types.AnswerTokens;
@@ -27,6 +30,8 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
 
   private int QUESTION = 1;
 
+  private LinkedList<Token> tokenList = new LinkedList<Token>();
+
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
     // reset the documents and the globalPosition
@@ -37,22 +42,32 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
 
     Iterator questionIterator = questionIndex.iterator();
     Iterator answerIterator = answerIndex.iterator();
-    // parse the tokens in the
+    // parse the tokens in the texts
+
+    // System.out.println(questionIndex.size());
+    // System.out.println(answerIndex.size());
+
     while (questionIterator.hasNext()) {
       Question question = ((Question) questionIterator.next());
       String text = question.getCoveredText();
       this.globalPosition = question.getBegin();
       qs = new QuestionTokens(aJCas, question.getBegin(), question.getEnd());
+
+      if (qs.getTokens() == null)
+        qs.setTokens(new FSArray(aJCas, questionIndex.size()));
+
       parseTokens(text, this.QUESTION);
-      qs.addToIndexes(aJCas);   
+      qs.addToIndexes(aJCas);
     }
 
     while (answerIterator.hasNext()) {
+
       Answer answer = ((Answer) answerIterator.next());
       String text = answer.getCoveredText();
       this.globalPosition = answer.getBegin();
       as = new AnswerTokens(aJCas, answer.getBegin(), answer.getEnd());
       as.setAnswer(answer);
+
       parseTokens(text, this.ANSWER);
       as.addToIndexes(aJCas);
     }
@@ -65,6 +80,8 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
     t.setShowSeparators(false);
     int offset = 0;
     int i = 0;
+    
+    tokenList.clear();
     while (t.hasNext()) {
       int begin = this.globalPosition + offset;
       offset += t.nextToken().length();
@@ -73,15 +90,31 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
       token.setConfidence(1.0);
       token.setCasProcessorId(this.getClass().getName());
       token.addToIndexes(aJCas);
-      if (type == this.QUESTION)
-        qs.setTokens(i, token);
-      else
-        as.setTokens(i, token);
-      
+      tokenList.add(token);
       i++;
       offset += 1;
-      
     }
+    
+    Iterator iterator = tokenList.iterator();
+    
+    int j = 0;
+
+    if (type == this.QUESTION) {
+      qs.setTokens(new FSArray(aJCas, i));
+      while (iterator.hasNext()){
+         qs.setTokens(j,(Token)iterator.next());
+         j++;
+      }
+
+    }else{
+      as.setTokens(new FSArray(aJCas, tokenList.size()));
+      while (iterator.hasNext()){
+         as.setTokens(j,(Token)iterator.next());
+         j++;
+      }
+    }
+      
+
   }
 
 }
