@@ -10,8 +10,8 @@ import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
-/** 
- * Updated by JCasGen Mon Sep 23 23:23:15 EDT 2013
+/** Inherited from Annotation to annotate an Question type and to distinguish with Question type.
+ * Updated by JCasGen Mon Oct 28 16:52:00 EDT 2013
  * @generated */
 public class Question_Type extends Annotation_Type {
   /** @generated */

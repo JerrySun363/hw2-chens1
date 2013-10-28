@@ -15,8 +15,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** Maintain a AnswerTokens for each question. In this way, it can limit the range of tokens so that there is no need to analyze the wholr JCas object again.
- * Updated by JCasGen Mon Sep 23 23:23:15 EDT 2013
- * XML source: /home/jerry/git/hw2-chens1/hw2-chens1/src/main/resources/descriptors/hw2-chens1-aae.xml
+ * Updated by JCasGen Mon Oct 28 16:51:59 EDT 2013
+ * XML source: /Users/Jerry/git/hw2-chens1/hw2-chens1/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class AnswerTokens extends Annotation {
   /** @generated
@@ -103,14 +103,14 @@ public class AnswerTokens extends Annotation {
   //*--------------*
   //* Feature: answer
 
-  /** getter for answer - gets 
+  /** getter for answer - gets Answers included, for general information query.
    * @generated */
   public Answer getAnswer() {
     if (AnswerTokens_Type.featOkTst && ((AnswerTokens_Type)jcasType).casFeat_answer == null)
       jcasType.jcas.throwFeatMissing("answer", "edu.cmu.deiis.types.AnswerTokens");
     return (Answer)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((AnswerTokens_Type)jcasType).casFeatCode_answer)));}
     
-  /** setter for answer - sets  
+  /** setter for answer - sets Answers included, for general information query. 
    * @generated */
   public void setAnswer(Answer v) {
     if (AnswerTokens_Type.featOkTst && ((AnswerTokens_Type)jcasType).casFeat_answer == null)

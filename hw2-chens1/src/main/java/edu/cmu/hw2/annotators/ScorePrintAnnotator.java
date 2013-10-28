@@ -10,7 +10,12 @@ import org.apache.uima.jcas.JCas;
 
 import edu.cmu.deiis.types.AnswerScore;
 import edu.cmu.deiis.types.Question;
-
+/**
+ * 
+ * @author Jerry
+ * After all the answers have been processed by the scoring method,
+ * this class simply reads the answers and prints them out.
+ */
 public class ScorePrintAnnotator extends JCasAnnotator_ImplBase {
 
   public static double averagePrecision = 0.0;
@@ -66,6 +71,10 @@ public class ScorePrintAnnotator extends JCasAnnotator_ImplBase {
 
   }
 
+  /**
+   * After all the docs are processed, now it is time to calculate the 
+   * Average precision.
+   */
   public void destroy() {
     System.out.printf("Average Precision: %2f\n\n", averagePrecision);
     super.destroy();

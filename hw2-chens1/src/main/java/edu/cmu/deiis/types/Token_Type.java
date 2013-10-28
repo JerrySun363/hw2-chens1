@@ -10,8 +10,8 @@ import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
-/** 
- * Updated by JCasGen Mon Sep 23 23:23:15 EDT 2013
+/** This is used to store the tokenized String token element. It is the basic component of a string.
+ * Updated by JCasGen Mon Oct 28 16:52:00 EDT 2013
  * @generated */
 public class Token_Type extends Annotation_Type {
   /** @generated */

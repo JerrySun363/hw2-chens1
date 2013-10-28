@@ -5,6 +5,13 @@ import edu.cmu.deiis.types.Answer;
 import edu.cmu.deiis.types.Question;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 
+/**
+ * 
+ * @author Jerry
+ *This class is the initial step to annotate the document with 
+ *Question and Answer type.
+ *
+ */
 public class TextElementAnnotator extends  JCasAnnotator_ImplBase
  {
    //This integer is used to recorded the global position of the file. 
@@ -30,6 +37,12 @@ public class TextElementAnnotator extends  JCasAnnotator_ImplBase
     
   }
   
+  /**
+   * 
+   * @param aJCas
+   * @param line
+   * Parse a line of Question type.
+   */
   private void parseQuestion(JCas aJCas, String line){
     int start = globalPosition+2;
     int end = globalPosition+line.length();
@@ -40,6 +53,12 @@ public class TextElementAnnotator extends  JCasAnnotator_ImplBase
     question.addToIndexes(aJCas);
   }
   
+  /**
+   * 
+   * @param aJCas
+   * @param line
+   * Parse a line of Answer.
+   */
   private void parseAnswer(JCas aJCas, String line){
     int offset = line.indexOf(" ", 2)+1;
     int start = globalPosition+offset;

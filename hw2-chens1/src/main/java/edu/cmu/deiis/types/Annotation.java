@@ -9,9 +9,9 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 
-/** 
- * Updated by JCasGen Mon Sep 23 23:23:15 EDT 2013
- * XML source: /home/jerry/git/hw2-chens1/hw2-chens1/src/main/resources/descriptors/hw2-chens1-aae.xml
+/** This is the basic Annotation of all the types.
+ * Updated by JCasGen Mon Oct 28 16:51:59 EDT 2013
+ * XML source: /Users/Jerry/git/hw2-chens1/hw2-chens1/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Annotation extends org.apache.uima.jcas.tcas.Annotation {
   /** @generated

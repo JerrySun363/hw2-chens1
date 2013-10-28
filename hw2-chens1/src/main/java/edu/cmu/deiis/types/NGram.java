@@ -10,9 +10,9 @@ import org.apache.uima.jcas.cas.TOP_Type;
 import org.apache.uima.jcas.cas.FSArray;
 
 
-/** 
- * Updated by JCasGen Mon Sep 23 23:23:15 EDT 2013
- * XML source: /home/jerry/git/hw2-chens1/hw2-chens1/src/main/resources/descriptors/hw2-chens1-aae.xml
+/** This Annoattion contains the N-Gram elements.
+ * Updated by JCasGen Mon Oct 28 16:51:59 EDT 2013
+ * XML source: /Users/Jerry/git/hw2-chens1/hw2-chens1/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class NGram extends Annotation {
   /** @generated
@@ -65,14 +65,14 @@ public class NGram extends Annotation {
   //*--------------*
   //* Feature: elements
 
-  /** getter for elements - gets 
+  /** getter for elements - gets The elements of the NGrams, basically they are an array of tokens.
    * @generated */
   public FSArray getElements() {
     if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_elements == null)
       jcasType.jcas.throwFeatMissing("elements", "edu.cmu.deiis.types.NGram");
     return (FSArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((NGram_Type)jcasType).casFeatCode_elements)));}
     
-  /** setter for elements - sets  
+  /** setter for elements - sets The elements of the NGrams, basically they are an array of tokens. 
    * @generated */
   public void setElements(FSArray v) {
     if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_elements == null)
@@ -99,14 +99,14 @@ public class NGram extends Annotation {
   //*--------------*
   //* Feature: elementType
 
-  /** getter for elementType - gets 
+  /** getter for elementType - gets String indicating teh element's type.
    * @generated */
   public String getElementType() {
     if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_elementType == null)
       jcasType.jcas.throwFeatMissing("elementType", "edu.cmu.deiis.types.NGram");
     return jcasType.ll_cas.ll_getStringValue(addr, ((NGram_Type)jcasType).casFeatCode_elementType);}
     
-  /** setter for elementType - sets  
+  /** setter for elementType - sets String indicating teh element's type. 
    * @generated */
   public void setElementType(String v) {
     if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_elementType == null)

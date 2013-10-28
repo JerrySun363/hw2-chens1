@@ -9,9 +9,9 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 
-/** 
- * Updated by JCasGen Mon Sep 23 23:23:15 EDT 2013
- * XML source: /home/jerry/git/hw2-chens1/hw2-chens1/src/main/resources/descriptors/hw2-chens1-aae.xml
+/** The Answer type is used to annotate an Answer Type, to distinguish with Question type.
+ * Updated by JCasGen Mon Oct 28 16:51:59 EDT 2013
+ * XML source: /Users/Jerry/git/hw2-chens1/hw2-chens1/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Answer extends Annotation {
   /** @generated
@@ -64,14 +64,14 @@ public class Answer extends Annotation {
   //*--------------*
   //* Feature: isCorrect
 
-  /** getter for isCorrect - gets 
+  /** getter for isCorrect - gets boolean value indicating whether the answer is correct.
    * @generated */
   public boolean getIsCorrect() {
     if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_isCorrect == null)
       jcasType.jcas.throwFeatMissing("isCorrect", "edu.cmu.deiis.types.Answer");
     return jcasType.ll_cas.ll_getBooleanValue(addr, ((Answer_Type)jcasType).casFeatCode_isCorrect);}
     
-  /** setter for isCorrect - sets  
+  /** setter for isCorrect - sets boolean value indicating whether the answer is correct. 
    * @generated */
   public void setIsCorrect(boolean v) {
     if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_isCorrect == null)
