@@ -17,11 +17,10 @@ import edu.cmu.deiis.types.Question;
 import edu.cmu.deiis.types.QuestionTokens;
 import edu.cmu.deiis.types.Token;
 /**
+ * This step is the second step in annotation.
+ * It generates the tokens of the questions and answers for future evaluation step.
  * 
  * @author Jerry
- *This step is the second step in annotation.
- *It generates the tokens of the questions and answers for future evaluation step.
- *
  */
 
 public class TokenAnnotator extends JCasAnnotator_ImplBase {

@@ -17,6 +17,7 @@ import edu.cmu.deiis.types.Token;
  * This annotator uses the tokens generated before to score the answers.
  * The process is simply to get out the tokens of question and answer
  * and compare the similarity.
+ * 
  * @author Jerry
  *
  */

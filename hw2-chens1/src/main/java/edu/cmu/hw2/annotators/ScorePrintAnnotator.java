@@ -11,11 +11,10 @@ import org.apache.uima.jcas.JCas;
 import edu.cmu.deiis.types.AnswerScore;
 import edu.cmu.deiis.types.Question;
 /**
- * 
- * @author Jerry
  * After all the answers have been processed by the scoring method,
  * this class simply reads the answers and prints them out.
- */
+ * @author Jerry
+ * */
 public class ScorePrintAnnotator extends JCasAnnotator_ImplBase {
 
   public static double averagePrecision = 0.0;

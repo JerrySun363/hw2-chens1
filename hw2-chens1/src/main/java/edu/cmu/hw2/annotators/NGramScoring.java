@@ -14,10 +14,9 @@ import edu.cmu.deiis.types.NGram;
 import edu.cmu.deiis.types.Question;
 import edu.cmu.deiis.types.QuestionTokens;
 /**
- * 
+ * This class generally does the NGram scoring based on the NGrams the docs generate.
+ *
  * @author Jerry
- *This class generally does the NGram scoring 
- *based on the NGrams the docs generate.
  *
  */
 public class NGramScoring extends JCasAnnotator_ImplBase {

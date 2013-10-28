@@ -6,10 +6,9 @@ import edu.cmu.deiis.types.Question;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 
 /**
- * 
+ * This class is the initial step to annotate the document with 
+ * Question and Answer type.
  * @author Jerry
- *This class is the initial step to annotate the document with 
- *Question and Answer type.
  *
  */
 public class TextElementAnnotator extends  JCasAnnotator_ImplBase
